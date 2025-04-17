@@ -1,0 +1,10 @@
+/* Basic styles for layout—feel free to adjust as needed */
+.task-assignment-container {
+    margin: 20px;
+  }
+  .tasks-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  

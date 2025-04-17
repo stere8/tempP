@@ -1,0 +1,9 @@
+<div class="user-list">
+    <h3>Select a User</h3>
+    <ul>
+      <li *ngFor="let user of users" (click)="selectUser(user)">
+        {{ user.name }} – {{ user.userType }}
+      </li>
+    </ul>
+  </div>
+  

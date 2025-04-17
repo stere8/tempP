@@ -1,0 +1,22 @@
+<div class="task-assignment-container">
+    <!-- User List Component: Pass the array of users and bind to userSelected event -->
+    <app-user-list [users]="users" (userSelected)="onUserSelected($event)"></app-user-list>
+    
+    <!-- Once a user is selected, display the task assignment section -->
+    <div *ngIf="selectedUser">
+      <h2>Task Assignment for: {{ selectedUser.name }}</h2>
+      
+      <!-- Container for tasks -->
+      <div class="tasks-section">
+        <!-- Assigned Tasks Component -->
+        <app-assigned-tasks [tasks]="assignedTasks"></app-assigned-tasks>
+        
+        <!-- Available Tasks Component -->
+        <app-available-tasks 
+            [tasks]="availableTasks" 
+            (assignTasks)="onAssignTasks($event)">
+        </app-available-tasks>
+      </div>
+    </div>
+  </div>
+  

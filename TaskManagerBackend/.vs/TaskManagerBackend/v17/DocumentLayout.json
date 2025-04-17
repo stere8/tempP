@@ -1,0 +1,250 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\assignmentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\assignmentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\services\\itaskservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:services\\itaskservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\paginatedresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\paginatedresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\deploymenttask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\deploymenttask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\taskbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\taskbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\implementationtask .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\implementationtask .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\models\\maintenancetask .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:models\\maintenancetask .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|c:\\users\\oracle.admin\\source\\proservice\\taskmanagerbackend\\taskmanagerbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3A8F55A5-4A52-83F2-9282-7A230524BB73}|TaskManagerBackend.csproj|solutionrelative:taskmanagerbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:22:40.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PaginatedResponse.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\PaginatedResponse.cs",
+              "RelativeDocumentMoniker": "Models\\PaginatedResponse.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\PaginatedResponse.cs",
+              "RelativeToolTip": "Models\\PaginatedResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T19:11:46.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAEwDMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T18:11:09.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "Services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Services\\TaskService.cs",
+              "RelativeToolTip": "Services\\TaskService.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:10:21.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ITaskServices.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Services\\ITaskServices.cs",
+              "RelativeDocumentMoniker": "Services\\ITaskServices.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Services\\ITaskServices.cs",
+              "RelativeToolTip": "Services\\ITaskServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:29:37.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAwJwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:25:22.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TaskBase.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\TaskBase.cs",
+              "RelativeDocumentMoniker": "Models\\TaskBase.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\TaskBase.cs",
+              "RelativeToolTip": "Models\\TaskBase.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAewAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:46:38.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Enums.cs",
+              "RelativeDocumentMoniker": "Enums.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Enums.cs",
+              "RelativeToolTip": "Enums.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAArwBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:54:49.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeploymentTask.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\DeploymentTask.cs",
+              "RelativeDocumentMoniker": "Models\\DeploymentTask.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\DeploymentTask.cs",
+              "RelativeToolTip": "Models\\DeploymentTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:01:16.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:15:04.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssignmentRequest.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\AssignmentRequest.cs",
+              "RelativeDocumentMoniker": "Models\\AssignmentRequest.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\AssignmentRequest.cs",
+              "RelativeToolTip": "Models\\AssignmentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T18:08:06.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ImplementationTask .cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\ImplementationTask .cs",
+              "RelativeDocumentMoniker": "Models\\ImplementationTask .cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\ImplementationTask .cs",
+              "RelativeToolTip": "Models\\ImplementationTask .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:01:25.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MaintenanceTask .cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\MaintenanceTask .cs",
+              "RelativeDocumentMoniker": "Models\\MaintenanceTask .cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\Models\\MaintenanceTask .cs",
+              "RelativeToolTip": "Models\\MaintenanceTask .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:01:34.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TaskManagerBackend.csproj",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\TaskManagerBackend.csproj",
+              "RelativeDocumentMoniker": "TaskManagerBackend.csproj",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\ProService\\TaskManagerBackend\\TaskManagerBackend.csproj",
+              "RelativeToolTip": "TaskManagerBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-13T16:26:47.111Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

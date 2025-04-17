@@ -1,0 +1,16 @@
+.assigned-tasks {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .assigned-tasks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .assigned-tasks li {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+  }
+  

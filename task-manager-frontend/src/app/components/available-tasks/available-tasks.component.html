@@ -1,0 +1,14 @@
+<div class="available-tasks">
+    <h3>Available Tasks</h3>
+    <ul>
+      <li *ngFor="let task of tasks" 
+          (click)="toggleSelection(task)"
+          [class.selected]="selectedTaskIds.includes(task.id)">
+        <strong>{{ task.shortDescription }}</strong> (Difficulty: {{ task.difficulty }})
+      </li>
+    </ul>
+    <button (click)="assignSelected()" [disabled]="selectedTaskIds.length === 0">
+      Assign Selected Tasks
+    </button>
+  </div>
+  

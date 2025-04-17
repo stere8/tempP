@@ -1,0 +1,9 @@
+<div class="assigned-tasks">
+    <h3>Assigned Tasks</h3>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <strong>{{ task.shortDescription }}</strong> (Difficulty: {{ task.difficulty }})
+      </li>
+    </ul>
+  </div>
+  
