@@ -29,8 +29,9 @@ namespace sms.backend.Controllers
         [HttpGet("parent/{parentId}")]
         public async Task<IActionResult> GetAssignmentsForParent(int parentId)
         {
+            var parent = _context.Parents.FirstOrDefault(s => s.ParentId == parentId);
             var assignments = await _context.StudentParents
-                .Where(sp => sp.ParentId == parentId)
+                .Where(sp => sp.ParentId.Equals(parent.UserId))
                 .Include(sp => sp.Student)
                 .ToListAsync();
             if (!assignments.Any())
@@ -56,7 +57,7 @@ namespace sms.backend.Controllers
 
             // Check if the assignment already exists.
             bool alreadyAssigned = await _context.StudentParents
-                .AnyAsync(sp => sp.ParentId == dto.ParentId && sp.StudentId == dto.StudentId);
+                .AnyAsync(sp => sp.ParentId.Equals(parent.UserId) && sp.StudentId == dto.StudentId);
             if (alreadyAssigned)
             {
                 return BadRequest("The student is already assigned to this parent.");

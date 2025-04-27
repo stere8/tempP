@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from './axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BASE_URL } from '../settings';
 import { Form, Button, Container } from 'react-bootstrap';
@@ -11,7 +11,7 @@ const AddEditLesson = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`${BASE_URL}/lessons/${id}`)
+            axiosInstance.get(`${BASE_URL}/api/lessons/${id}`)
                 .then(response => setLesson(response.data))
                 .catch(error => console.error('Error fetching lesson data:', error));
         }
@@ -25,11 +25,11 @@ const AddEditLesson = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (id) {
-            axios.put(`${BASE_URL}/lessons/${id}`, lesson)
+            axiosInstance.put(`${BASE_URL}/api/lessons/${id}`, lesson)
                 .then(() => navigate('/lessons'))
                 .catch(error => console.error('Error updating lesson:', error));
         } else {
-            axios.post(`${BASE_URL}/lessons`, lesson)
+            axiosInstance.post(`${BASE_URL}/api/lessons`, lesson)
                 .then(() => navigate('/lessons'))
                 .catch(error => console.error('Error adding lesson:', error));
         }

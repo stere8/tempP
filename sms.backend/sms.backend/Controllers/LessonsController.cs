@@ -4,7 +4,7 @@ using sms.backend.Data;
 using sms.backend.Models;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class LessonsController : ControllerBase
 {
     private readonly SchoolContext _context;
@@ -20,7 +20,8 @@ public class LessonsController : ControllerBase
     public async Task<ActionResult<IEnumerable<Lesson>>> GetLessons()
     {
         _logger.LogInformation("Getting all lessons");
-        return await _context.Lessons.ToListAsync();
+        var result = await _context.Lessons.ToListAsync();
+        return Ok( result);
     }
 
     [HttpGet("{id}")]
@@ -76,6 +77,15 @@ public class LessonsController : ControllerBase
     {
         _logger.LogInformation("Getting lessons for grade level: {GradeLevel}", gradeLevel);
         var lessons = await _context.Lessons.Where(l => l.GradeLevel == gradeLevel).ToListAsync();
+        return Ok(lessons);
+    }
+
+    [HttpGet("teacher/{teacherid}")]
+    public async Task<ActionResult<IEnumerable<Lesson>>> GetLessonsByTeacher(int teacherid)
+    {
+        _logger.LogInformation("Getting lessons for grade level: {teacherid}", teacherid);
+        var lessonsIds = await _context.TeacherEnrollments.Where(te => te.StaffId == teacherid).Select(l => l.LessonId).ToListAsync();
+        var lessons = await _context.Lessons.Where(l => lessonsIds.Contains(l.LessonId)).ToListAsync();
         return Ok(lessons);
     }
 }

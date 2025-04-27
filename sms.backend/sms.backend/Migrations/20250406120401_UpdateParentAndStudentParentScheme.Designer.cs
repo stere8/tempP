@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sms.backend.Data;
 
@@ -11,9 +12,11 @@ using sms.backend.Data;
 namespace sms.backend.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20250406120401_UpdateParentAndStudentParentScheme")]
+    partial class UpdateParentAndStudentParentScheme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +45,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("ClassId");
 
-                    b.ToTable("Classes", (string)null);
+                    b.ToTable("Classes");
 
                     b.HasData(
                         new
@@ -292,7 +295,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("TeacherEnrollmentId");
 
-                    b.ToTable("TeacherEnrollments", (string)null);
+                    b.ToTable("TeacherEnrollments");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Attendance", b =>
@@ -318,7 +321,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("AttendanceId");
 
-                    b.ToTable("Attendances", (string)null);
+                    b.ToTable("Attendances");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Enrollment", b =>
@@ -337,7 +340,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("EnrollmentId");
 
-                    b.ToTable("Enrollments", (string)null);
+                    b.ToTable("Enrollments");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Lesson", b =>
@@ -365,7 +368,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("LessonId");
 
-                    b.ToTable("Lessons", (string)null);
+                    b.ToTable("Lessons");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Mark", b =>
@@ -390,7 +393,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("MarkId");
 
-                    b.ToTable("Marks", (string)null);
+                    b.ToTable("Marks");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Message", b =>
@@ -420,7 +423,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Messages", (string)null);
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Parent", b =>
@@ -450,7 +453,7 @@ namespace sms.backend.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Parents", (string)null);
+                    b.ToTable("Parents");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Resource", b =>
@@ -490,7 +493,7 @@ namespace sms.backend.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.ToTable("Resources", (string)null);
+                    b.ToTable("Resources");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Staff", b =>
@@ -524,7 +527,7 @@ namespace sms.backend.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Staff", (string)null);
+                    b.ToTable("Staff");
 
                     b.HasData(
                         new
@@ -651,7 +654,7 @@ namespace sms.backend.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
 
                     b.HasData(
                         new
@@ -811,7 +814,7 @@ namespace sms.backend.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("StudentParents", (string)null);
+                    b.ToTable("StudentParents");
                 });
 
             modelBuilder.Entity("sms.backend.Models.Timetable", b =>
@@ -840,7 +843,7 @@ namespace sms.backend.Migrations
 
                     b.HasKey("TimetableId");
 
-                    b.ToTable("Timetables", (string)null);
+                    b.ToTable("Timetables");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -898,8 +901,7 @@ namespace sms.backend.Migrations
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -938,7 +940,7 @@ namespace sms.backend.Migrations
                     b.HasOne("sms.backend.Models.Parent", "Parent")
                         .WithMany("StudentParents")
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("sms.backend.Models.Student", "Student")

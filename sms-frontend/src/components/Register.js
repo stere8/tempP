@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../settings';
 
@@ -16,7 +16,7 @@ const Register = () => {
     setError("");
     setMessage("");
     try {
-      const response = await axios.post(`${BASE_URL}/api/account/register`, { email, password, role });
+      const response = await axiosInstance.post(`${BASE_URL}/api/account/register`, { email, password, role });
       console.log("Registration successful:", response.data);
       setMessage("Registration successful. Please log in.");
       // Optionally, navigate to the login page

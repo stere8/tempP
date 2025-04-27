@@ -132,7 +132,29 @@
         }
       }
     },
-    "/Attendance": {
+    "/api/Account/userinfo/{id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Attendance": {
       "get": {
         "tags": [
           "Attendance"
@@ -216,7 +238,7 @@
         }
       }
     },
-    "/Attendance/{id}": {
+    "/api/Attendance/{id}": {
       "get": {
         "tags": [
           "Attendance"
@@ -317,7 +339,7 @@
         }
       }
     },
-    "/Classes": {
+    "/api/Classes": {
       "get": {
         "tags": [
           "Classes"
@@ -411,7 +433,49 @@
         }
       }
     },
-    "/Classes/{id}": {
+    "/api/Classes/{classId}/message": {
+      "post": {
+        "tags": [
+          "Classes"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Classes/{id}": {
       "get": {
         "tags": [
           "Classes"
@@ -590,7 +654,7 @@
         }
       }
     },
-    "/Enrollments": {
+    "/api/Enrollments": {
       "get": {
         "tags": [
           "Enrollments"
@@ -674,7 +738,7 @@
         }
       }
     },
-    "/Enrollments/{id}": {
+    "/api/Enrollments/{id}": {
       "get": {
         "tags": [
           "Enrollments"
@@ -754,7 +818,7 @@
         }
       }
     },
-    "/Enrollments/{enrollmentId}": {
+    "/api/Enrollments/{enrollmentId}": {
       "delete": {
         "tags": [
           "Enrollments"
@@ -777,7 +841,7 @@
         }
       }
     },
-    "/Lessons": {
+    "/api/Lessons": {
       "get": {
         "tags": [
           "Lessons"
@@ -861,7 +925,7 @@
         }
       }
     },
-    "/Lessons/{id}": {
+    "/api/Lessons/{id}": {
       "get": {
         "tags": [
           "Lessons"
@@ -962,7 +1026,7 @@
         }
       }
     },
-    "/Lessons/grade/{gradeLevel}": {
+    "/api/Lessons/grade/{gradeLevel}": {
       "get": {
         "tags": [
           "Lessons"
@@ -1011,7 +1075,56 @@
         }
       }
     },
-    "/Marks": {
+    "/api/Lessons/teacher/{teacherid}": {
+      "get": {
+        "tags": [
+          "Lessons"
+        ],
+        "parameters": [
+          {
+            "name": "teacherid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Lesson"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Lesson"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Lesson"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Marks": {
       "get": {
         "tags": [
           "Marks"
@@ -1095,7 +1208,7 @@
         }
       }
     },
-    "/Marks/{id}": {
+    "/api/Marks/{id}": {
       "get": {
         "tags": [
           "Marks"
@@ -1181,6 +1294,29 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Marks/report/{studentID}": {
+      "get": {
+        "tags": [
+          "Marks"
+        ],
+        "parameters": [
+          {
+            "name": "studentID",
             "in": "path",
             "required": true,
             "schema": {
@@ -1296,6 +1432,257 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Parents": {
+      "get": {
+        "tags": [
+          "Parents"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Parent"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Parent"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Parent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Parents"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Parents/{id}": {
+      "get": {
+        "tags": [
+          "Parents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Parent"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Parents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Parent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Parents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ParentStudent": {
+      "get": {
+        "tags": [
+          "ParentStudent"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ParentStudent/parent/{parentId}": {
+      "get": {
+        "tags": [
+          "ParentStudent"
+        ],
+        "parameters": [
+          {
+            "name": "parentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ParentStudent/assign": {
+      "post": {
+        "tags": [
+          "ParentStudent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParentStudentAssignmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParentStudentAssignmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParentStudentAssignmentDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1447,7 +1834,7 @@
         }
       }
     },
-    "/Staff": {
+    "/api/Staff": {
       "get": {
         "tags": [
           "Staff"
@@ -1531,7 +1918,7 @@
         }
       }
     },
-    "/Staff/{id}": {
+    "/api/Staff/{id}": {
       "get": {
         "tags": [
           "Staff"
@@ -1632,7 +2019,7 @@
         }
       }
     },
-    "/Students": {
+    "/api/Students": {
       "get": {
         "tags": [
           "Students"
@@ -1716,7 +2103,7 @@
         }
       }
     },
-    "/Students/{id}": {
+    "/api/Students/{id}": {
       "get": {
         "tags": [
           "Students"
@@ -1817,7 +2204,56 @@
         }
       }
     },
-    "/TeacherEnrollments": {
+    "/api/Students/teacher/{id}": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TeacherEnrollments": {
       "get": {
         "tags": [
           "TeacherEnrollments"
@@ -1901,7 +2337,7 @@
         }
       }
     },
-    "/TeacherEnrollments/{id}": {
+    "/api/TeacherEnrollments/{id}": {
       "get": {
         "tags": [
           "TeacherEnrollments"
@@ -1981,7 +2417,7 @@
         }
       }
     },
-    "/TeacherEnrollments/{teacherId}/{classId}": {
+    "/api/TeacherEnrollments/{teacherId}/{classId}": {
       "get": {
         "tags": [
           "TeacherEnrollments"
@@ -2030,7 +2466,7 @@
         }
       }
     },
-    "/TeacherEnrollments/{enrollmentId}": {
+    "/api/TeacherEnrollments/{enrollmentId}": {
       "delete": {
         "tags": [
           "TeacherEnrollments"
@@ -2053,7 +2489,7 @@
         }
       }
     },
-    "/Timetable": {
+    "/api/Timetable": {
       "get": {
         "tags": [
           "Timetable"
@@ -2137,7 +2573,7 @@
         }
       }
     },
-    "/Timetable/{id}": {
+    "/api/Timetable/{id}": {
       "get": {
         "tags": [
           "Timetable"
@@ -2238,7 +2674,7 @@
         }
       }
     },
-    "/Timetable/class/{id}": {
+    "/api/Timetable/class/{id}": {
       "get": {
         "tags": [
           "Timetable"
@@ -2562,6 +2998,59 @@
         "type": "integer",
         "format": "int32"
       },
+      "Parent": {
+        "type": "object",
+        "properties": {
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/IdentityUser"
+          },
+          "studentParents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudentParent"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParentStudentAssignmentDto": {
+        "type": "object",
+        "properties": {
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "studentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isPrimary": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterDto": {
         "type": "object",
         "properties": {
@@ -2652,6 +3141,29 @@
           },
           "user": {
             "$ref": "#/components/schemas/IdentityUser"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StudentParent": {
+        "type": "object",
+        "properties": {
+          "studentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "student": {
+            "$ref": "#/components/schemas/Student"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/Parent"
+          },
+          "isPrimary": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

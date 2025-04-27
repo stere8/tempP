@@ -1,16 +1,25 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using sms.backend.Data;
 using sms.backend.Services;
 using System.Text;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ---------------------------------------------------------------------
 // Add services to the container.
-builder.Services.AddControllers();
+// ---------------------------------------------------------------------
+
+// Controllers with JSON options (preserve references and indent output)
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
@@ -31,7 +40,6 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
     };
 });
-
 builder.Services.AddAuthorization();
 
 // Register DbContext and Identity
@@ -43,32 +51,51 @@ builder.Services.AddIdentityCore<IdentityUser>()
     .AddEntityFrameworkStores<SchoolContext>()
     .AddDefaultTokenProviders();
 
+// Register custom services
 builder.Services.AddScoped<ClassesService>();
 
-// Configure CORS if needed
+// Configure CORS with specific origin (with credentials support)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder
+        policyBuilder => policyBuilder
             .WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials());
 });
 
+// Add Swagger for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "My API",
+        Version = "v1"
+    });
 });
 
+// Configure logging to use console only
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
+
+// ---------------------------------------------------------------------
+// Build the application.
+// ---------------------------------------------------------------------
+
 var app = builder.Build();
+
+
+// ---------------------------------------------------------------------
+// Configure the HTTP request pipeline.
+// ---------------------------------------------------------------------
 
 if (app.Environment.IsDevelopment())
 {
+    // In development, show detailed error pages and enable Swagger.
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
@@ -78,21 +105,44 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandler("/Home/Error");
+    // In production, use a custom exception handler that also sets the CORS header,
+    // so error responses are not blocked by the browser.
+    app.UseExceptionHandler(appBuilder =>
+    {
+        appBuilder.Run(async context =>
+        {
+            // Set status code to 500 and add the CORS header for your frontend origin.
+            context.Response.StatusCode = 500;
+            context.Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
+
+            var exceptionFeature = context.Features.Get<IExceptionHandlerFeature>();
+            if (exceptionFeature != null)
+            {
+                var exception = exceptionFeature.Error;
+                // Write a generic error message (you can log the detailed exception instead)
+                await context.Response.WriteAsync("An unexpected error occurred: " + exception.Message);
+            }
+        });
+    });
     app.UseHsts();
 }
 
+// Uncomment the following if you want to enable HTTPS redirection in the future.
+// app.UseHttpsRedirection();
 
-//app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Use the JWT authentication middleware.
+// IMPORTANT: Place UseCors after UseRouting so that all endpoints (including error responses)
+// receive the correct CORS headers.
+app.UseCors("AllowSpecificOrigin");
+
+// Authentication & Authorization middleware
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseCors("AllowSpecificOrigin");
-
+// Map controllers to endpoints.
 app.MapControllers();
 
+// Run the application.
 app.Run();

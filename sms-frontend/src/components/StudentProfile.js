@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from './axiosInstance ';
 import { notifyError } from './NotificationService';
 
 const StudentProfile = ({ studentId }) => {
@@ -8,12 +8,12 @@ const StudentProfile = ({ studentId }) => {
 
   useEffect(() => {
     // Fetch student details
-    axios.get(`/api/students/${studentId}`)
+    axiosInstance.get(`/api/students/${studentId}`)
       .then(response => setStudent(response.data))
       .catch(() => notifyError("Failed to load student details."));
 
     // Fetch parent messages
-    axios.get(`/api/parent-message/${studentId}`)
+    axiosInstance.get(`/api/parent-message/${studentId}`)
       .then(response => setParentMessages(response.data))
       .catch(() => notifyError("Failed to load parent messages."));
   }, [studentId]);

@@ -4,7 +4,7 @@ using sms.backend.Data;
 using sms.backend.Views;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TeacherEnrollmentsController : ControllerBase
 {
     private readonly SchoolContext _context;

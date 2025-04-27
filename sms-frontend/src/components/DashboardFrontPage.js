@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "./axiosInstance";
-import { jwtDecode } from "jwt-decode"; // Ensure your version supports named export (or use default export if needed)
+import {jwtDecode} from "jwt-decode"; // Make sure you're using the correct import if it's default export
 import {
   Card,
   Table,
@@ -9,7 +9,9 @@ import {
   Badge
 } from "react-bootstrap";
 
-// Inline view for the Admin role
+//
+// ────────────────────────────────────────────────────────────────── Admin Dashboard
+//
 const AdminDashboard = ({ data }) => (
   <Container className="dashboard-section">
     <h2 className="mb-4">Admin Overview</h2>
@@ -42,44 +44,88 @@ const AdminDashboard = ({ data }) => (
   </Container>
 );
 
-// Inline view for the Teacher role
+//
+// ────────────────────────────────────────────────────────────────── Teacher Dashboard
+//
 const TeacherDashboard = ({ data }) => {
+  // If data is empty or invalid
   if (!data || data.length === 0) {
     return (
       <Alert variant="warning" className="m-3">
         <h3>No Class Assignments</h3>
         <p className="mb-0">
-          You haven't been assigned to any classes yet. Please contact the school administration.
+          You haven&apos;t been assigned to any classes yet. Please contact the school administration.
         </p>
       </Alert>
     );
   }
 
+  // We expect something like data = [{ classes: [...], schedule: [...], subject: [...] }, ...]
+  const { classes, schedule, subject } = data[0] || {};
+
   return (
     <Container className="dashboard-section">
-      <h2 className="mb-4">Teaching Schedule</h2>
-      {data.map((assignment, index) => (
-        <Card key={index} className="mb-3">
-          <Card.Body>
-            <Card.Title>{assignment.className}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {assignment.subject} - {assignment.schedule}
-            </Card.Subtitle>
-          </Card.Body>
-        </Card>
-      ))}
+      <h2 className="mb-4">Teacher Dashboard</h2>
+
+      {/* Display assigned classes */}
+      <h3>Assigned Classes</h3>
+      {classes && classes.length > 0 ? (
+        <ul>
+          {classes.map((cls) => (
+            <li key={cls.classId}>
+              {cls.name} - Grade {cls.gradeLevel} ({cls.year})
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No classes assigned.</p>
+      )}
+
+      {/* Display schedule */}
+      <h3 className="mt-4">Schedule</h3>
+      {schedule && schedule.length > 0 ? (
+        <Table bordered hover>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Lesson</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((item) => {
+              // Find the subject details for each lesson
+              const subj = subject.find((s) => s.lessonId === item.lessonId);
+
+              return (
+                <tr key={item.timetableId}>
+                  <td>{item.dayOfWeek}</td>
+                  <td>
+                    {item.startTime} - {item.endTime}
+                  </td>
+                  <td>{subj ? subj.subject : "Unknown Lesson"}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      ) : (
+        <p>No schedule available.</p>
+      )}
     </Container>
   );
 };
 
-// Inline view for the Parent role
+//
+// ────────────────────────────────────────────────────────────────── Parent Dashboard
+//
 const ParentDashboard = ({ data }) => {
   if (!data || data.length === 0) {
     return (
       <Alert variant="warning" className="m-3">
         <h3>No Students Linked</h3>
         <p className="mb-0">
-          Your account isn't associated with any students. Please contact the school office.
+          Your account isn&apos;t associated with any students. Please contact the school office.
         </p>
       </Alert>
     );
@@ -89,13 +135,16 @@ const ParentDashboard = ({ data }) => {
     <Container className="dashboard-section">
       <h2 className="mb-4">Linked Students</h2>
       <div className="row">
-        {data.map(student => (
+        {data.map((student) => (
           <div key={student.studentId} className="col-md-4 mb-3">
             <Card>
               <Card.Body>
-                <Card.Title>{student.firstName} {student.lastName}</Card.Title>
+                <Card.Title>
+                  {student.firstName} {student.lastName}
+                </Card.Title>
                 <Card.Text>
-                  Class: {student.className}<br />
+                  Class: {student.className}
+                  <br />
                   Grade: {student.gradeLevel}
                 </Card.Text>
               </Card.Body>
@@ -107,69 +156,13 @@ const ParentDashboard = ({ data }) => {
   );
 };
 
-const renderTeacherDashBoardView = (data) => {
-  // Check if data exists and has keys
-  if (!data || Object.keys(data).length === 0) {
-    return <div>No data available.</div>;
-  }
+//
+// ────────────────────────────────────────────────────────────────── Student Dashboard
+//
+const StudentDashboard = ({ data }) => {
+  // Helpful debug
+  console.log("Student Dashboard Data:", data);
 
-  const { classes, schedule, subject } = data[0];
-
-  return (
-    <div>
-      <h2>Teacher Dashboard</h2>
-
-      {/* Display assigned classes */}
-      <h3>Assigned Classes</h3>
-      {classes && classes.length > 0 ? (
-        <ul>
-          {classes.map(cls => (
-            <li key={cls.classId}>
-              {cls.name} - Grade {cls.gradeLevel} ({cls.year})
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No classes assigned.</p>
-      )}
-
-      {/* Display schedule */}
-      <h3>Schedule</h3>
-      {schedule && schedule.length > 0 ? (
-        <table border="1" cellPadding="5" cellSpacing="0">
-          <thead>
-            <tr>
-              <th>Day</th>
-              <th>Time</th>
-              <th>Lesson</th>
-            </tr>
-          </thead>
-          <tbody>
-            {schedule.map(item => {
-              // Find the subject details matching the lessonId.
-              const subj = subject.find(s => s.lessonId === item.lessonId);
-              return (
-                <tr key={item.timetableId}>
-                  <td>{item.dayOfWeek}</td>
-                  <td>{item.endTime} - {item.endTime}</td>
-                  <td>{subj ? subj.subject : "Unknown Lesson"}</td>
-                  {/* Assuming your timetable items include a teacher's name property;
-                      if not, adjust accordingly to pull the teacher's name */}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      ) : (
-        <p>No schedule available.</p>
-      )}
-    </div>
-  );
-};
-
-// Inline view for the Student role (integrated directly)
-const renderStudentDashboardView = (data) =>
-  {
   // Define time slots and days for the timetable
   const timeSlots = [
     { start: "08:00", end: "09:00" },
@@ -179,35 +172,19 @@ const renderStudentDashboardView = (data) =>
     { start: "13:30", end: "14:30" },
     { start: "14:30", end: "15:30" }
   ];
-
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-  // Generate a timetable object from the timetable data provided in classData.classTimetable
-  const generateTimetable = (timetableData) => {
-    const timetable = {};
-    days.forEach(day => {
-      timetable[day] = {};
-      timeSlots.forEach(slot => {
-        // Ensure that the times are in "HH:mm:ss" format
-        const entry = timetableData.find(
-          item => item.dayOfWeek === day &&
-                  item.startTime === `${slot.start}:00` &&
-                  item.endTime === `${slot.end}:00`
-        );
-        timetable[day][slot.start] = entry ? `${entry.lessonName} (${entry.teachersName})` : "Free Period";
-      });
-    });
-    return timetable;
-  };
+  const timetableData = data?.classData?.classTimetable?.$values || [];
+  const attendance = data?.attendanceSummary || [];
+  const marks = data?.marks || [];
+  const viewedClass = data?.classData?.viewedClass;
+  const classTeachers = data?.classData?.classTeachers || [];
 
-  // Check for empty profile data; note we expect classData to exist with timetable property.
+  // Empty checks
   const isEmpty =
-    !data.classData ||
-    (
-      (!data.classData.classTimetable || data.classData.classTimetable.length === 0) &&
-      (!data.attendanceSummary || data.attendanceSummary.length === 0) &&
-      (!data.marks || data.marks.length === 0)
-    );
+    timetableData.length === 0 &&
+    attendance.length === 0 &&
+    marks.length === 0;
 
   if (isEmpty) {
     return (
@@ -220,45 +197,70 @@ const renderStudentDashboardView = (data) =>
     );
   }
 
-  // Generate timetable using the nested property
-  const timetable = generateTimetable(data.classData.classTimetable);
+  // Build timetable keyed by day + startTime
+  const generateTimetable = (rawTimetable) => {
+    const result = {};
+    days.forEach((day) => {
+      result[day] = {};
+      timeSlots.forEach((slot) => {
+        // Match item by dayOfWeek, start/end times
+        const entry = rawTimetable.find(
+          (item) =>
+            item.dayOfWeek === day &&
+            item.startTime === `${slot.start}:00` &&
+            item.endTime === `${slot.end}:00`
+        );
+        // Fill each cell with either lesson or 'Free Period'
+        result[day][slot.start] = entry
+          ? `${entry.lessonName} (${entry.teachersName})`
+          : "Free Period";
+      });
+    });
+    return result;
+  };
+
+  const timetable = generateTimetable(timetableData);
 
   return (
     <Container className="dashboard-section">
       {/* Class Information */}
-      <Card className="mb-4">
-        <Card.Body>
-          <Card.Title>
-            {data.classData.viewedClass.name} - Grade {data.classData.viewedClass.gradeLevel}
-            <Badge bg="secondary" className="ms-2">{data.classData.viewedClass.year}</Badge>
-          </Card.Title>
-          <Card.Text>
-            Class Teacher:{" "}
-            {data.classData.classTeachers?.length > 0
-              ? data.classData.classTeachers[0].firstName + " " + data.classData.classTeachers[0].lastName
-              : "Not assigned"}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+      {viewedClass && (
+        <Card className="mb-4">
+          <Card.Body>
+            <Card.Title>
+              {viewedClass.name} - Grade {viewedClass.gradeLevel}
+              <Badge bg="secondary" className="ms-2">
+                {viewedClass.year}
+              </Badge>
+            </Card.Title>
+            <Card.Text>
+              Class Teacher:&nbsp;
+              {classTeachers.length > 0
+                ? `${classTeachers[0].firstName} ${classTeachers[0].lastName}`
+                : "Not assigned"}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      )}
 
       {/* Timetable Section */}
-      {data.classData.classTimetable?.length > 0 && (
+      {timetableData.length > 0 && (
         <>
           <h2 className="mb-4">Weekly Timetable</h2>
           <Table striped bordered hover className="mb-5">
             <thead>
               <tr>
                 <th>Time</th>
-                {days.map(day => (
+                {days.map((day) => (
                   <th key={day}>{day}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {timeSlots.map(slot => (
+              {timeSlots.map((slot) => (
                 <tr key={slot.start}>
                   <td>{slot.start} - {slot.end}</td>
-                  {days.map(day => (
+                  {days.map((day) => (
                     <td key={day}>{timetable[day][slot.start]}</td>
                   ))}
                 </tr>
@@ -269,11 +271,11 @@ const renderStudentDashboardView = (data) =>
       )}
 
       {/* Attendance Section */}
-      {data.attendanceSummary?.length > 0 ? (
+      {attendance.length > 0 ? (
         <>
           <h2 className="mb-4">Attendance Summary</h2>
           <div className="row mb-5">
-            {data.attendanceSummary.map((item, index) => (
+            {attendance.map((item, index) => (
               <div key={index} className="col-md-3 mb-3">
                 <Card>
                   <Card.Body>
@@ -293,7 +295,7 @@ const renderStudentDashboardView = (data) =>
       )}
 
       {/* Marks Section */}
-      {data.marks?.length > 0 ? (
+      {marks.length > 0 ? (
         <>
           <h2 className="mb-4">Academic Performance</h2>
           <Table striped bordered hover>
@@ -305,7 +307,7 @@ const renderStudentDashboardView = (data) =>
               </tr>
             </thead>
             <tbody>
-              {data.marks.map((mark, index) => (
+              {marks.map((mark, index) => (
                 <tr key={index}>
                   <td>{mark.subject}</td>
                   <td>{mark.markValue}</td>
@@ -325,7 +327,9 @@ const renderStudentDashboardView = (data) =>
   );
 };
 
-// Consolidated Dashboard Front Page that handles all roles
+//
+// ────────────────────────────────────────────────────────────────── Main Dashboard
+//
 const DashboardFrontPage = () => {
   const [userRole, setUserRole] = useState(null);
   const [userId, setUserId] = useState(null);
@@ -344,8 +348,13 @@ const DashboardFrontPage = () => {
 
     try {
       const decoded = jwtDecode(token);
-      setUserId(decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]);
-      const roles = decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || [];
+      setUserId(
+        decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]
+      );
+      const roles =
+        decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] ||
+        [];
+      // roles can be string or array
       setUserRole(Array.isArray(roles) ? roles[0] : roles);
     } catch (err) {
       console.error("Token decoding failed:", err);
@@ -376,7 +385,9 @@ const DashboardFrontPage = () => {
       })
       .catch((err) => {
         console.error("API Error:", err);
-        setError(err.response?.data?.message || "Failed to load dashboard data");
+        setError(
+          err.response?.data?.message || "Failed to load dashboard data"
+        );
         setLoading(false);
       });
   }, [userRole, userId]);
@@ -407,9 +418,11 @@ const DashboardFrontPage = () => {
       {!loading && !error && (
         <>
           {userRole === "Admin" && <AdminDashboard data={dashboardData} />}
-          {userRole === "Teacher" && renderTeacherDashBoardView(dashboardData)}
+          {userRole === "Teacher" && <TeacherDashboard data={dashboardData} />}
           {userRole === "Parent" && <ParentDashboard data={dashboardData} />}
-          {(userRole === "Student" || !userRole) && renderStudentDashboardView(dashboardData)}
+          {(userRole === "Student" || !userRole) && (
+            <StudentDashboard data={dashboardData} />
+          )}
         </>
       )}
     </Container>

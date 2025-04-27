@@ -7,7 +7,7 @@ using sms.backend.Models;
 namespace sms.backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class StudentsController : ControllerBase
     {
         private readonly SchoolContext _context;
@@ -51,6 +51,56 @@ namespace sms.backend.Controllers
             return student;
         }
 
+
+        // GET: api/Students/5
+        [HttpGet("teacher/{id}")]
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudentsForTeacher(int id)
+        {
+            _logger.LogInformation("Getting students for teacher with ID: {Id}", id);
+
+            // 1. Get all class IDs where this teacher is enrolled
+            var classIds = await _context.TeacherEnrollments
+                .Where(te => te.StaffId == id)
+                .Select(te => te.ClassId)
+                .Distinct()
+                .ToListAsync();
+
+            if (!classIds.Any())
+            {
+                _logger.LogWarning("No classes found for teacher with ID: {Id}", id);
+                return NotFound("This teacher is not assigned to any classes.");
+            }
+
+            // 2. Get all enrollment records for those classes
+            var enrollmentStudentIds = await _context.Enrollments
+                .Where(e => classIds.Contains(e.ClassId))
+                .Select(e => e.StudentId)
+                .Distinct()
+                .ToListAsync();
+
+            if (!enrollmentStudentIds.Any())
+            {
+                _logger.LogWarning("No students found in classes taught by teacher with ID: {Id}", id);
+                return NotFound("No students enrolled in the teacher's classes.");
+            }
+
+            // 3. Retrieve the students using the obtained student IDs
+            var students = await _context.Students
+                .Where(s => enrollmentStudentIds.Contains(s.StudentId))
+                .ToListAsync();
+
+            // Optionally, load the user data for each student if needed.
+            foreach (var student in students)
+            {
+                if (!string.IsNullOrEmpty(student.UserId))
+                {
+                    student.User = await _userManager.FindByIdAsync(student.UserId);
+                }
+            }
+
+            return Ok(students);
+        }
+
         // POST: api/Students
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
@@ -70,6 +120,8 @@ namespace sms.backend.Controllers
 
             return CreatedAtAction(nameof(GetStudent), new { id = student.StudentId }, student);
         }
+
+
 
         // PUT: api/Students/5
         [HttpPut("{id}")]

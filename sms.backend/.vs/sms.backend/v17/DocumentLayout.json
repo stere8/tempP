@@ -3,48 +3,87 @@
   "WorkspaceRootPath": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\parentstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\parentstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\parentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\parentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\oracle.admin\\AppData\\Local\\SourceServer\\4b9d154c201d893496dfa6bd5b7582960e0606a6249f38ffda555a6fb134d499\\sms.backend\\Controllers\\StudentsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\resourcecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\resourcecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\studentparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\studentparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\enrollmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\enrollmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\parentstudentassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\parentstudentassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\parentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\parentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\markscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\markscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\parentstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\parentstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\data\\schoolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\data\\schoolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\resourcedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\resourcedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\timetablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\timetablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\teacherenrollmentscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\teacherenrollmentscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\resourcecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\resourcecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\lessonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\views\\classesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,36 +94,32 @@
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\services\\classesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\studentparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\studentparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\data\\schoolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\data\\schoolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\recipient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\recipient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\migrations\\20250406121731_updateparentandstudentparentschemetwice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\migrations\\20250406121731_updateparentandstudentparentschemetwice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\migrations\\schoolcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\migrations\\schoolcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\parentstudentassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\parentstudentassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\timetablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\timetablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\recipient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\recipient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,10 +138,6 @@
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\sms.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\sms.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -123,16 +154,8 @@
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\migrations\\20250329132823_updateidentityschema.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|c:\\users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\models\\resourcedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C130121D-2721-47D3-9F66-5EE1C77D96B5}|sms.backend\\sms.backend.csproj|solutionrelative:sms.backend\\models\\resourcedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,33 +165,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "ParentStudentController.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentStudentController.cs",
               "RelativeDocumentMoniker": "sms.backend\\Controllers\\ParentStudentController.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentStudentController.cs",
               "RelativeToolTip": "sms.backend\\Controllers\\ParentStudentController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEMAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAApwEkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:43:36.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T05:43:36.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ResourceController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ResourceController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ResourceController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ResourceController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\ResourceController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Parent.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Parent.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Models\\Parent.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Parent.cs",
+              "RelativeToolTip": "sms.backend\\Models\\Parent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T15:58:40.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T19:22:19.627Z"
             },
             {
               "$type": "Document",
@@ -178,153 +199,45 @@
               "RelativeDocumentMoniker": "sms.backend\\Controllers\\StudentsController.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\StudentsController.cs",
               "RelativeToolTip": "sms.backend\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAwB4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAADwv4AAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T17:58:56.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T17:58:56.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MarksControllers.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MarksControllers.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\MarksControllers.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MarksControllers.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\MarksControllers.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T08:56:08.536Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "EnrollmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\EnrollmentsController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\EnrollmentsController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\EnrollmentsController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\EnrollmentsController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwEAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T09:12:49.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "sms.backend\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AccountController.cs",
               "RelativeToolTip": "sms.backend\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAuwIcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAADwv0oAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T13:59:09.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAuwCAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T13:59:17.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ParentsController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentsController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ParentsController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentsController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\ParentsController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwDYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:32:15.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StaffController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\StaffController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\StaffController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\StaffController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\StaffController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:29:36.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ClassesController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ClassesController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ClassesController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ClassesController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\ClassesController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAAGwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:46:50.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SchoolContext.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Data\\SchoolContext.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Data\\SchoolContext.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Data\\SchoolContext.cs",
-              "RelativeToolTip": "sms.backend\\Data\\SchoolContext.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAkAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T09:43:58.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentParent.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\StudentParent.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Models\\StudentParent.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\StudentParent.cs",
-              "RelativeToolTip": "sms.backend\\Models\\StudentParent.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvw8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:22:38.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ParentStudentAssignmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ParentStudentAssignmentDto.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Models\\ParentStudentAssignmentDto.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ParentStudentAssignmentDto.cs",
-              "RelativeToolTip": "sms.backend\\Models\\ParentStudentAssignmentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:44:36.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ClassesService.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Services\\ClassesService.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Services\\ClassesService.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Services\\ClassesService.cs",
-              "RelativeToolTip": "sms.backend\\Services\\ClassesService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAADAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T00:09:16.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Resource.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Resource.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Models\\Resource.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Resource.cs",
-              "RelativeToolTip": "sms.backend\\Models\\Resource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T09:43:39.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ClassesView.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Views\\ClassesView.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Views\\ClassesView.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Views\\ClassesView.cs",
-              "RelativeToolTip": "sms.backend\\Views\\ClassesView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:29:45.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T13:59:09.735Z"
             },
             {
               "$type": "Document",
@@ -334,40 +247,267 @@
               "RelativeDocumentMoniker": "sms.backend\\Program.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Program.cs",
               "RelativeToolTip": "sms.backend\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAACYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAgwI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T14:08:16.833Z",
+              "WhenOpened": "2025-03-29T14:08:16.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAADgv3AAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T13:59:17.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\AppData\\Local\\SourceServer\\4b9d154c201d893496dfa6bd5b7582960e0606a6249f38ffda555a6fb134d499\\sms.backend\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\4b9d154c201d893496dfa6bd5b7582960e0606a6249f38ffda555a6fb134d499\\sms.backend\\Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\AppData\\Local\\SourceServer\\4b9d154c201d893496dfa6bd5b7582960e0606a6249f38ffda555a6fb134d499\\sms.backend\\Controllers\\StudentsController.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\4b9d154c201d893496dfa6bd5b7582960e0606a6249f38ffda555a6fb134d499\\sms.backend\\Controllers\\StudentsController.cs [Read Only]",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAEwH4AAAAIAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T04:49:04.756Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Student.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\Student.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Student.cs",
               "RelativeToolTip": "sms.backend\\Models\\Student.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:17:52.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T19:17:52.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\StaffController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\StaffController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAADgvzAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T19:29:36.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ParentsController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentsController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ParentsController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ParentsController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\ParentsController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAlwCUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:32:15.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResourceDtos.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ResourceDtos.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Models\\ResourceDtos.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ResourceDtos.cs",
+              "RelativeToolTip": "sms.backend\\Models\\ResourceDtos.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:48:44.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SchoolContext.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Data\\SchoolContext.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Data\\SchoolContext.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Data\\SchoolContext.cs",
+              "RelativeToolTip": "sms.backend\\Data\\SchoolContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAIAwwA8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T09:43:58.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ClassesController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ClassesController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ClassesController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ClassesController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\ClassesController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAIAwwGAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T19:46:50.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TimetableController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TimetableController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\TimetableController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TimetableController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\TimetableController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T01:41:41.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TeacherEnrollmentsController .cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TeacherEnrollmentsController .cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\TeacherEnrollmentsController .cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TeacherEnrollmentsController .cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\TeacherEnrollmentsController .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T13:20:44.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ResourceController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ResourceController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\ResourceController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\ResourceController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\ResourceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:58:40.331Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\MessageController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\MessageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T21:36:01.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LessonsController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\LessonsController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\LessonsController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\LessonsController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\LessonsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T09:12:43.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Controllers\\AttendanceController.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "sms.backend\\Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T19:29:05.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ClassesView.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Views\\ClassesView.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Views\\ClassesView.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Views\\ClassesView.cs",
+              "RelativeToolTip": "sms.backend\\Views\\ClassesView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T19:29:45.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ClassesService.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Services\\ClassesService.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Services\\ClassesService.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Services\\ClassesService.cs",
+              "RelativeToolTip": "sms.backend\\Services\\ClassesService.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAD4v0YAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T00:09:16.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "StudentParent.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\StudentParent.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Models\\StudentParent.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\StudentParent.cs",
+              "RelativeToolTip": "sms.backend\\Models\\StudentParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T19:22:38.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "SchoolContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\SchoolContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "sms.backend\\Migrations\\SchoolContextModelSnapshot.cs",
               "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\SchoolContextModelSnapshot.cs",
               "RelativeToolTip": "sms.backend\\Migrations\\SchoolContextModelSnapshot.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAK8DAAAAAAAAAAAQwMIDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T20:11:31.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T20:11:31.509Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
+              "Title": "20250406121731_UpdateParentAndStudentParentSchemeTwice.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\20250406121731_UpdateParentAndStudentParentSchemeTwice.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Migrations\\20250406121731_UpdateParentAndStudentParentSchemeTwice.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\20250406121731_UpdateParentAndStudentParentSchemeTwice.cs",
+              "RelativeToolTip": "sms.backend\\Migrations\\20250406121731_UpdateParentAndStudentParentSchemeTwice.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAwDgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T12:19:26.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ParentStudentAssignmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ParentStudentAssignmentDto.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Models\\ParentStudentAssignmentDto.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ParentStudentAssignmentDto.cs",
+              "RelativeToolTip": "sms.backend\\Models\\ParentStudentAssignmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:44:36.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Resource.cs",
+              "RelativeDocumentMoniker": "sms.backend\\Models\\Resource.cs",
+              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Resource.cs",
+              "RelativeToolTip": "sms.backend\\Models\\Resource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T09:43:39.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "Recipient.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Recipient.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\Recipient.cs",
@@ -375,25 +515,11 @@
               "RelativeToolTip": "sms.backend\\Models\\Recipient.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T21:42:10.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T21:42:10.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MessageController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MessageController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\MessageController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\MessageController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\MessageController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAYwEEAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T21:36:01.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Message.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\Message.cs",
@@ -401,12 +527,11 @@
               "RelativeToolTip": "sms.backend\\Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T20:03:14.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T20:03:14.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "TimetableView.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Views\\TimetableView.cs",
               "RelativeDocumentMoniker": "sms.backend\\Views\\TimetableView.cs",
@@ -418,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "Staff.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Staff.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\Staff.cs",
@@ -430,19 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TimetableController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TimetableController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\TimetableController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\TimetableController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\TimetableController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T01:41:41.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\LoginModel.cs",
@@ -454,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\RegisterDto.cs",
               "RelativeDocumentMoniker": "sms.backend\\Models\\RegisterDto.cs",
@@ -466,19 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "AttendanceController.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AttendanceController.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Controllers\\AttendanceController.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Controllers\\AttendanceController.cs",
-              "RelativeToolTip": "sms.backend\\Controllers\\AttendanceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:29:05.479Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "sms.backend.csproj",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\sms.backend.csproj",
               "RelativeDocumentMoniker": "sms.backend\\sms.backend.csproj",
@@ -490,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "20250331201658_UpdateUserLinkingModels.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\20250331201658_UpdateUserLinkingModels.cs",
               "RelativeDocumentMoniker": "sms.backend\\Migrations\\20250331201658_UpdateUserLinkingModels.cs",
@@ -502,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "20250329132823_UpdateIdentitySchema.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\20250329132823_UpdateIdentitySchema.cs",
               "RelativeDocumentMoniker": "sms.backend\\Migrations\\20250329132823_UpdateIdentitySchema.cs",
@@ -514,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "20250329132823_UpdateIdentitySchema.Designer.cs",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Migrations\\20250329132823_UpdateIdentitySchema.Designer.cs",
               "RelativeDocumentMoniker": "sms.backend\\Migrations\\20250329132823_UpdateIdentitySchema.Designer.cs",
@@ -526,19 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Parent.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Parent.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Models\\Parent.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\Parent.cs",
-              "RelativeToolTip": "sms.backend\\Models\\Parent.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBAAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:22:19.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\appsettings.json",
               "RelativeDocumentMoniker": "sms.backend\\appsettings.json",
@@ -547,18 +636,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-29T15:07:45.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ResourceDtos.cs",
-              "DocumentMoniker": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ResourceDtos.cs",
-              "RelativeDocumentMoniker": "sms.backend\\Models\\ResourceDtos.cs",
-              "ToolTip": "C:\\Users\\oracle.admin\\source\\repos\\sms\\sms.backend\\sms.backend\\Models\\ResourceDtos.cs",
-              "RelativeToolTip": "sms.backend\\Models\\ResourceDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T15:48:44.48Z"
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sms.backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23a82f4f9dc4a11b873231a03fe51f8571c020ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+401688f6ae2b7c3ac615aa79e2084b60f6756891")]
 [assembly: System.Reflection.AssemblyProductAttribute("sms.backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sms.backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

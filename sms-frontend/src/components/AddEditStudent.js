@@ -1,80 +1,101 @@
+// src/components/AddEditStudent.js
+
 import React, { useState, useEffect } from 'react';
-import axiosInstance from './axiosInstance'
+import axiosInstance from './axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BASE_URL } from '../settings';
 import { Form, Button, Container } from 'react-bootstrap';
 
 const AddEditStudent = () => {
+  // Student state
   const [student, setStudent] = useState({
     firstName: '',
     lastName: '',
     dateOfBirth: '',
     userId: ''
   });
+
+  // Dropdown user list state
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    // Wrap everything in an async function
     const loadData = async () => {
       try {
+        let linkedUser = null;
         let fetchedStudent = null;
 
-        // If editing, fetch the student first
+        // 1) If editing, fetch the student data first.
         if (id) {
-          const studentResp = await axiosInstance.get(`${BASE_URL}/students/${id}`);
-          fetchedStudent = studentResp.data;
-          // format the date
+          const { data: studentData } = await axiosInstance.get(`${BASE_URL}/api/students/${id}`);
+          fetchedStudent = studentData;
+          // Format the date (assumes ISO string, e.g., "2024-04-07T00:00:00")
           if (fetchedStudent.dateOfBirth) {
             fetchedStudent.dateOfBirth = fetchedStudent.dateOfBirth.split('T')[0];
           }
           setStudent(fetchedStudent);
-        }
+          console.log("Fetched student:", fetchedStudent);
 
-        // Now fetch unlinked users
-        const unlinkedResp = await axiosInstance.get(`${BASE_URL}/api/account/student/unlinked`);
-        let fetchedUsers = unlinkedResp.data; // Array of { id, email }
-
-        // If editing & the student has a userId, ensure that user is in the list
-        if (id && fetchedStudent && fetchedStudent.userId) {
-          // Check if that user is already in the unlinked list
-          const exists = fetchedUsers.some(u => u.id === fetchedStudent.userId);
-          if (!exists) {
-            // We can guess the student's user email if we have it
-            // If the student object has `user` or `email`, use that; otherwise use a placeholder
-            const userEmail = fetchedStudent.user?.email || 'Assigned User';
-            fetchedUsers.push({ id: fetchedStudent.userId, email: userEmail });
+          // 2) If the student has a linked userId, fetch that user’s info.
+          if (fetchedStudent.userId) {
+            const { data: userInfo } = await axiosInstance.get(`${BASE_URL}/api/account/userinfo/${fetchedStudent.userId}`);
+            linkedUser = {
+              // Normalize the identifier (check for identityUserId property or fallback to id)
+              identityUserId: ((userInfo.identityUserId ?? userInfo.id) || "").toLowerCase(),
+              email: userInfo.email ?? userInfo.userName
+            };
+            console.log("Fetched account info (linkedUser):", linkedUser);
           }
         }
 
-        setUsers(fetchedUsers);
+        // 3) Fetch unlinked student users.
+        const { data: raw } = await axiosInstance.get(`${BASE_URL}/api/account/student/unlinked`);
+        // Handle response that might be an array or wrapped in a $values property.
+        const arrayData = Array.isArray(raw) ? raw : (raw.$values || []);
+        console.log("Fetched unlinked student users (raw):", arrayData);
+
+        // 4) Normalize the list: for each user, ensure we have { identityUserId, email }
+        const unlinkedNormalized = arrayData.map(u => ({
+          identityUserId: (((u.identityUserId ?? u.id) || "").toLowerCase()),
+          email: u.email
+        }));
+
+        // 5) If we're editing and the student has a linked user, ensure that user is included in the list.
+        if (linkedUser && !unlinkedNormalized.some(u => u.identityUserId === linkedUser.identityUserId)) {
+          unlinkedNormalized.push(linkedUser);
+        }
+
+        console.log("Final users for dropdown:", unlinkedNormalized);
+        // 6) Update state with the normalized user list.
+        setUsers(unlinkedNormalized);
       } catch (error) {
-        console.error('Error loading data:', error);
+        console.error("Error fetching data in AddEditStudent:", error);
       }
     };
 
     loadData();
   }, [id]);
 
+  // Handle form field changes
   const handleChange = e => {
     const { name, value } = e.target;
     setStudent(prev => ({ ...prev, [name]: value }));
   };
 
+  // Handle submission: Add or update student
   const handleSubmit = async e => {
     e.preventDefault();
     const payload = { ...student };
-
     try {
       if (id) {
-        await axiosInstance.put(`${BASE_URL}/students/${id}`, payload);
+        await axiosInstance.put(`${BASE_URL}/api/students/${id}`, payload);
       } else {
-        await axiosInstance.post(`${BASE_URL}/students`, payload);
+        await axiosInstance.post(`${BASE_URL}/api/students`, payload);
       }
       navigate('/students');
     } catch (error) {
-      console.error('Error saving student:', error);
+      console.error("Error saving student:", error);
     }
   };
 
@@ -120,12 +141,12 @@ const AddEditStudent = () => {
           <Form.Control
             as="select"
             name="userId"
-            value={student.userId || ''} // ensure it's a string or ''
+            value={student.userId || ''}
             onChange={handleChange}
           >
             <option value="">Select a user</option>
             {users.map(user => (
-              <option key={user.id} value={user.id}>
+              <option key={user.identityUserId} value={user.identityUserId}>
                 {user.email}
               </option>
             ))}

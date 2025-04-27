@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { AuthContext } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -8,9 +8,7 @@ const NavigationBar = () => {
   const { userRole, studentId, staffId, parentId } = useContext(AuthContext);
   const navigate = useNavigate();
   console.log(userRole);
-  console.log(userRole);
-  console.log(userRole);
-  console.log(userRole);
+
   // Determine the edit profile route based on the role-specific ID
   const getEditRoute = () => {
     if (staffId) return `/staff/edit/${staffId}`;
@@ -33,84 +31,90 @@ const NavigationBar = () => {
           <Nav className="me-auto">
             {userRole && userRole === 'Admin' && (
               <>
-                <LinkContainer to="/dashboard">
-                  <Nav.Link>Dashboard</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/attendance">
-                  <Nav.Link>Attendance</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/classes">
-                  <Nav.Link>Classes</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/enrollments">
-                  <Nav.Link>Enrollments</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/teacher-enrollments">
-                  <Nav.Link>Teacher Enrollments</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/lessons">
-                  <Nav.Link>Lessons</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/marks">
-                  <Nav.Link>Marks</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/staff">
-                  <Nav.Link>Staff</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/students">
-                  <Nav.Link>Students</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/parents">
-                  <Nav.Link>Parents</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/timetable">
-                  <Nav.Link>Timetable</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/parent-students">
-                  <Nav.Link>Parent Assignments</Nav.Link>
-                </LinkContainer>
+                <NavDropdown title="Administration" id="admin-nav-dropdown">
+                  <LinkContainer to="/dashboard">
+                    <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/attendance">
+                    <NavDropdown.Item>Attendance</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/classes">
+                    <NavDropdown.Item>Classes</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/lessons">
+                    <NavDropdown.Item>Lessons</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/marks">
+                    <NavDropdown.Item>Marks</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+                <NavDropdown title="Users" id="users-nav-dropdown">
+                  <LinkContainer to="/staff">
+                    <NavDropdown.Item>Staff</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/students">
+                    <NavDropdown.Item>Students</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/parents">
+                    <NavDropdown.Item>Parents</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+                <NavDropdown title="Other Management" id="other-nav-dropdown">
+                  <LinkContainer to="/enrollments">
+                    <NavDropdown.Item>Enrollments</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/teacher-enrollments">
+                    <NavDropdown.Item>Teacher Enrollments</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/timetable">
+                    <NavDropdown.Item>Timetable</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/parent-students">
+                    <NavDropdown.Item>Parent Assignments</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               </>
             )}
 
             {userRole && userRole === 'Teacher' && (
               <>
-                <LinkContainer to="/dashboard">
-                  <Nav.Link>Dashboard</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/attendance">
-                  <Nav.Link>Attendance</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/classes">
-                  <Nav.Link>Classes</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/marks">
-                  <Nav.Link>Marks</Nav.Link>
-                </LinkContainer>
+                <NavDropdown title="Teacher Panel" id="teacher-nav-dropdown">
+                  <LinkContainer to="/dashboard">
+                    <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/attendance">
+                    <NavDropdown.Item>Attendance</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/classes">
+                    <NavDropdown.Item>Classes</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/marks">
+                    <NavDropdown.Item>Marks</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               </>
             )}
 
             {userRole && userRole === 'Parent' && (
               <>
-                <LinkContainer to="/dashboard">
-                  <Nav.Link>Dashboard</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/parents/students">
-                  <Nav.Link>My Students</Nav.Link>
-                </LinkContainer>
+                <NavDropdown title="Parent Panel" id="parent-nav-dropdown">
+                  <LinkContainer to="/dashboard">
+                    <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/parents/students">
+                    <NavDropdown.Item>My Students</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               </>
             )}
 
             {userRole && userRole === 'Student' && (
               <>
-                <LinkContainer to="/dashboard">
-                  <Nav.Link>Dashboard</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/attendance">
-                  <Nav.Link>Attendance</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/timetable">
-                  <Nav.Link>Timetable</Nav.Link>
-                </LinkContainer>
+                <NavDropdown title="Student Panel" id="student-nav-dropdown">
+                  <LinkContainer to="/dashboard">
+                    <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               </>
             )}
           </Nav>
@@ -120,7 +124,7 @@ const NavigationBar = () => {
                 <LinkContainer to={getEditRoute()}>
                   <Nav.Link>Edit Profile</Nav.Link>
                 </LinkContainer>
-                                <LinkContainer to="/logout">
+                <LinkContainer to="/logout">
                   <Nav.Link>Logout</Nav.Link>
                 </LinkContainer>
               </>

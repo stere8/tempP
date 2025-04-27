@@ -17,7 +17,7 @@ function UploadResource() {
             formData.append("UploadedBy", 1); // In real scenario, get from user session or claims
             formData.append("File", file);
 
-            await axios.post("/api/resource/upload", formData, {
+            await axiosInstance.post("/api/resource/upload", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }

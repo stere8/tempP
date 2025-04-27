@@ -6,7 +6,7 @@ function ResourceLibrary() {
     const [resources, setResources] = useState([]);
 
     useEffect(() => {
-        axios.get(`/api/resource/class/${classId}`)
+        axiosInstance.get(`/api/resource/class/${classId}`)
             .then((res) => setResources(res.data))
             .catch(console.error);
     }, [classId]);

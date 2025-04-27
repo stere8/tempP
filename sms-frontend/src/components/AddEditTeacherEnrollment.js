@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from './axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BASE_URL } from '../settings';
 import { Form, Button } from 'react-bootstrap';
-import axiosInstance from './axiosInstance' 
 
 const AddEditTeacherEnrollment = () => {
     const [teachers, setTeachers] = useState([]);

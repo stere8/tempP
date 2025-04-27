@@ -67,7 +67,7 @@ namespace sms.backend.Controllers
 
                 return Ok(new { user.Id, user.Email });
             }
-        
+
 
         [HttpGet("{userType}/unlinked")]
         public async Task<IActionResult> GetUnlinkedUsers(string userType)
@@ -77,42 +77,95 @@ namespace sms.backend.Controllers
 
             // Retrieve all Identity users.
             var allUsers = await _userManager.Users.ToListAsync();
+            List<string> linkedUserIds = new();
 
-            if (userType.ToLower() == "student")
+            if (userType.Equals("student", StringComparison.OrdinalIgnoreCase))
             {
                 // Get Identity user IDs already linked to a Student.
-                var linkedUserIds = await _context.Students
+                linkedUserIds = await _context.Students
                     .Where(s => s.UserId != null)
                     .Select(s => s.UserId)
                     .ToListAsync();
-                var unlinkedUsers = allUsers
-                    .Where(u => !linkedUserIds.Contains(u.Id) && _userManager.IsInRoleAsync(u, "Student").Result)
-                    .Select(u => new { u.Id, u.Email });
-                return Ok(unlinkedUsers);
+
+                var unlinkedStudents = new List<IdentityUser>();
+
+                foreach (var user in allUsers)
+                {
+                    bool isStudent = await _userManager.IsInRoleAsync(user, "Student");
+                    if (isStudent && !linkedUserIds.Contains(user.Id))
+                    {
+                        unlinkedStudents.Add(user);
+                    }
+                }
+
+                // For each unlinked Identity user, also get the numeric StudentId (if exists) from Students.
+                var result = unlinkedStudents.Select(u => new
+                {
+                    IdentityUserId = u.Id,
+                    Email = u.Email,
+                    NumericId = _context.Students.FirstOrDefault(s => s.UserId == u.Id)?.StudentId ?? 0
+                }).ToList();
+
+                return Ok(result);
             }
-            else if (userType.ToLower() == "teacher")
+            else if (userType.Equals("teacher", StringComparison.OrdinalIgnoreCase))
             {
                 // Get Identity user IDs already linked to a Staff member.
-                var linkedUserIds = await _context.Staff
+                linkedUserIds = await _context.Staff
                     .Where(s => s.UserId != null)
                     .Select(s => s.UserId)
                     .ToListAsync();
-                var unlinkedUsers = allUsers
-                    .Where(u => !linkedUserIds.Contains(u.Id) && _userManager.IsInRoleAsync(u, "Teacher").Result)
-                    .Select(u => new { u.Id, u.Email });
-                return Ok(unlinkedUsers);
+
+                var unlinkedTeachers = new List<IdentityUser>();
+
+                foreach (var user in allUsers)
+                {
+                    bool isTeacher = await _userManager.IsInRoleAsync(user, "Teacher");
+                    if (isTeacher && !linkedUserIds.Contains(user.Id))
+                    {
+                        unlinkedTeachers.Add(user);
+                    }
+                }
+
+                // For each unlinked Identity user, also get the numeric StaffId from Staff.
+                var result = unlinkedTeachers.Select(u => new
+                {
+                    IdentityUserId = u.Id,
+                    Email = u.Email,
+                    NumericId = _context.Staff.FirstOrDefault(s => s.UserId == u.Id)?.StaffId ?? 0
+                }).ToList();
+
+                return Ok(result);
             }
-            else if (userType.ToLower() == "parent")
+            else if (userType.Equals("parent", StringComparison.OrdinalIgnoreCase))
             {
-                // Get Identity user IDs already linked as a Parent (in StudentParent table)
-                var linkedUserIds = await _context.Parents
-                    .Select(sp => sp.UserId)
+                // Get Identity user IDs already linked as a Parent.
+                linkedUserIds = await _context.Parents
+                    .Where(p => p.UserId != null)
+                    .Select(p => p.UserId)
                     .Distinct()
                     .ToListAsync();
-                var unlinkedUsers = allUsers
-                    .Where(u => !linkedUserIds.Contains(u.Id) && _userManager.IsInRoleAsync(u, "Parent").Result)
-                    .Select(u => new { u.Id, u.Email });
-                return Ok(unlinkedUsers);
+
+                var unlinkedParents = new List<IdentityUser>();
+
+                foreach (var user in allUsers)
+                {
+                    bool isParent = await _userManager.IsInRoleAsync(user, "Parent");
+                    if (isParent && !linkedUserIds.Contains(user.Id))
+                    {
+                        unlinkedParents.Add(user);
+                    }
+                }
+
+                // For each unlinked Identity user, also get the numeric ParentId from Parents.
+                var result = unlinkedParents.Select(u => new
+                {
+                    IdentityUserId = u.Id,
+                    Email = u.Email,
+                    NumericId = _context.Parents.FirstOrDefault(p => p.UserId == u.Id)?.ParentId ?? 0
+                }).ToList();
+
+                return Ok(result);
             }
             else
             {
@@ -219,5 +272,34 @@ namespace sms.backend.Controllers
             }
             return Ok("Password reset successful.");
         }
+
+
+        // New endpoint to get user account info via user ID
+        [Authorize]
+        [HttpGet("userinfo/{id}")]
+        public async Task<IActionResult> GetUserAccountInfo(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return BadRequest("User ID is required.");
+
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return NotFound("User not found.");
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            // Optionally, you can return additional properties here as needed.
+            var accountInfo = new
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                Roles = roles
+            };
+
+            return Ok(accountInfo);
+        }
+
+
     }
 }

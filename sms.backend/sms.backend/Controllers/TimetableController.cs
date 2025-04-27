@@ -6,7 +6,7 @@ using sms.backend.Models;
 namespace sms.backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TimetableController : ControllerBase
     {
         private readonly SchoolContext _context;

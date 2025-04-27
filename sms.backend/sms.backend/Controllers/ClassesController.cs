@@ -9,7 +9,7 @@ using sms.backend.Views;
 using System.Data;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class ClassesController : ControllerBase
 {
     private readonly SchoolContext _context;
@@ -79,7 +79,6 @@ public class ClassesController : ControllerBase
         }
     }
 
-    [HttpPost("{classId}/message")]
     [HttpPost("{classId}/message")]
     public async Task<IActionResult> SendMessageToClass(int classId, [FromBody] string messageDto)
     {

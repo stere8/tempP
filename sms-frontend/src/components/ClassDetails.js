@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Card, Container, Table, Button, Form, Alert } from "react-bootstrap";
 import axiosInstance from "./axiosInstance"; // Adjust path as needed
 import { BASE_URL } from "../settings";
 
 const ClassDetails = () => {
-  const { id } = useParams();              // Class ID from route param
+  const { id } = useParams(); // Class ID from route param
   const [classDetails, setClassDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  
   // For sending a message
   const [messageText, setMessageText] = useState("");
   const [messageStatus, setMessageStatus] = useState("");
 
   useEffect(() => {
-    // Fetch the class details from your backend
     const fetchClassDetails = async () => {
       try {
-        const response = await axiosInstance.get(`${BASE_URL}/classes/${id}`);
+        const response = await axiosInstance.get(`${BASE_URL}/api/classes/${id}`);
         setClassDetails(response.data);
       } catch (err) {
         console.error("Error fetching class details:", err);
@@ -44,11 +43,17 @@ const ClassDetails = () => {
 
   const generateTimetable = () => {
     if (!classDetails || !classDetails.classTimetable) return {};
+    
+    // Ensure we have an array; check if classTimetable is already an array or has a $values property.
+    const timetableArray = Array.isArray(classDetails.classTimetable)
+      ? classDetails.classTimetable
+      : classDetails.classTimetable.$values || [];
+
     const timetable = {};
     days.forEach((day) => {
       timetable[day] = {};
       timeSlots.forEach((slot) => {
-        const entry = classDetails.classTimetable.find(
+        const entry = timetableArray.find(
           (item) =>
             item.dayOfWeek === day &&
             item.startTime === `${slot.start}:00` &&
@@ -78,7 +83,6 @@ const ClassDetails = () => {
     }
   };
 
-  // Loading or error states
   if (loading) {
     return (
       <Container>
