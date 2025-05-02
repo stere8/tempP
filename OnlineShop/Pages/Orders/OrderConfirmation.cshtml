@@ -1,0 +1,19 @@
+﻿@page
+@model OnlineShop.Pages.Orders.OrderConfirmationModel
+
+<h2>Order Confirmation</h2>
+
+@if (Model.Order != null)
+{
+    <div>
+        <h4>Your order has been placed successfully!</h4>
+        <p><strong>Order ID:</strong> @Model.Order.OrderId</p>
+        <p><strong>Total Amount:</strong> @($"{Model.Order.TotalAmount:c}")</p>
+        <p>Your order is now being processed.</p>
+    </div>
+    <a asp-page="/Products/Index" class="btn btn-primary">Continue Shopping</a>
+}
+else
+{
+    <p class="text-danger">Sorry, we couldn't find your order. Please try again later.</p>
+}

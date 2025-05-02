@@ -1,0 +1,70 @@
+﻿@page "{id:int?}"
+@model OnlineShop.Pages.Products.AddEditProductModel
+@{
+    ViewBag.Title = Model.Product.ProductId == 0 ? "Add Product" : $"Edit Product {Model.Product.Name}";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="product-form-container">
+    <form method="post" enctype="multipart/form-data">
+        @if (Model.ProductId.HasValue)
+        {
+            <input type="hidden" asp-for="Product.ProductId" />
+        }
+
+        <div class="form-group">
+            <label asp-for="Product.Name">Product Name</label>
+            <input asp-for="Product.Name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.Price">Price</label>
+            <input asp-for="Product.Price" class="form-control" type="number" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.Description">Description</label>
+            <textarea asp-for="Product.Description" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.CategoryId">Category</label>
+            <select asp-for="Product.CategoryId" class="form-control" asp-items="Model.Categories" required>
+                <option value="" disabled selected>Select a category</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.StockQuantity">Stock Quantity</label>
+            <input asp-for="Product.StockQuantity" class="form-control" type="number" required />
+        </div>
+        <input asp-for="currentProductUrl" type="hidden" value="@Model.Product.ImageUrl"/>
+
+        <div class="form-group">
+            <label>Product Image</label>
+            <input type="file" name="ImageFile" class="form-control" accept="image/*" @(!Model.ProductId.HasValue ? "required" : "") />
+            @if (Model.ProductId.HasValue && !string.IsNullOrEmpty(Model.Product.ImageUrl))
+            {
+                <div class="current-image mt-2">
+                    <p>Current image:</p>
+                    <img src="/images/@Model.Product.ImageUrl" alt="@Model.Product.Name" style="max-width: 200px;" />
+                </div>
+            }
+        </div>
+
+        <div class="form-actions mt-4 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">
+                @(Model.ProductId.HasValue ? "Save Changes" : "Add Product")
+            </button>
+            @if (Model.ProductId.HasValue)
+            {
+                <button type="submit" asp-page-handler="Delete" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this product?')">
+                    Delete
+                </button>
+            }
+            <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

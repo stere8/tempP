@@ -1,0 +1,143 @@
+﻿@page
+@model OnlineShop.Pages.Admin.DashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<!-- KPI Summary -->
+<div class="row text-center">
+    <div class="col-md-3 mb-3">
+        <div class="card bg-light shadow-sm">
+            <div class="card-body">
+                <h5>Total Users</h5>
+                <h3 class="text-primary">@Model.TotalUsers</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-light shadow-sm">
+            <div class="card-body">
+                <h5>Total Products</h5>
+                <h3 class="text-success">@Model.TotalProducts</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-light shadow-sm">
+            <div class="card-body">
+                <h5>Total Orders</h5>
+                <h3 class="text-info">@Model.TotalOrders</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-light shadow-sm">
+            <div class="card-body">
+                <h5>Total Revenue</h5>
+                <h3 class="text-warning">$@Model.TotalRevenue</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<!-- Orders By Status -->
+<h4 class="mt-4">📦 Orders by Status</h4>
+<div class="mb-3">
+    @foreach (var entry in Model.OrdersByStatus)
+    {
+        <span class="badge rounded-pill bg-secondary me-2">
+            @entry.Key: @entry.Value
+        </span>
+    }
+</div>
+
+<!-- Low Stock Alerts -->
+@if (Model.LowStockProducts?.Any() == true)
+{
+    <div class="alert alert-warning mt-4">
+        <h5><i class="bi bi-exclamation-triangle-fill text-danger"></i> Low Stock Alerts</h5>
+        <ul>
+            @foreach (var product in Model.LowStockProducts)
+            {
+                <li><strong>@product.Name</strong> – Stock: @product.StockQuantity</li>
+            }
+        </ul>
+    </div>
+}
+
+<!-- Top Selling Products -->
+<h3 class="mt-5">🔥 Top Selling Products</h3>
+<ul class="list-group mb-4">
+    @foreach (var item in Model.TopSellingProducts)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.Product.Name
+            <span class="badge bg-primary rounded-pill">@item.TotalSold sold</span>
+        </li>
+    }
+</ul>
+
+<!-- Top Revenue Products -->
+<h3>💰 Top Revenue Products</h3>
+<ul class="list-group mb-4">
+    @foreach (var item in Model.TopRevenueProducts)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.Product.Name
+            <span class="badge bg-success rounded-pill">$@item.TotalRevenue</span>
+        </li>
+    }
+</ul>
+
+<!-- Most Ordered Categories -->
+<h3>🗂️ Most Ordered Categories</h3>
+<ul class="list-group mb-4">
+    @foreach (var item in Model.MostOrderedCategories)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.Category.Name
+            <span class="badge bg-secondary rounded-pill">@item.OrderCount orders</span>
+        </li>
+    }
+</ul>
+
+<h3 class="mt-5">Top Wishlisted Products</h3>
+<ul class="list-group mb-4">
+    @foreach (var item in Model.TopWishlistedProducts)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.Product.Name
+            <span class="badge bg-info rounded-pill">@item.Count wishlists</span>
+        </li>
+    }
+</ul>
+
+<!-- Recent Orders -->
+<h3>🕒 Recent Orders</h3>
+<table class="table table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.RecentOrders)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.User?.UserName</td>
+                <td>$@order.TotalAmount</td>
+                <td>@order.Status</td>
+                <td>@order.OrderDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

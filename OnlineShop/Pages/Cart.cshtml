@@ -1,0 +1,63 @@
+﻿@page
+@model OnlineShop.Pages.CartModel
+@{
+    ViewData["Title"] = "Your Shopping Cart";
+}
+
+<h2>Your Shopping Cart</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Message"]
+    </div>
+}
+
+@if (Model.CartItems.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>
+                        <form method="post" asp-page-handler="UpdateQuantity">
+                            <input type="hidden" name="productId" value="@item.ProductId" />
+                            <input type="number" name="quantity" value="@item.Quantity" min="1" max="@item.Product.StockQuantity" class="form-control" style="width: 60px; display: inline;" />
+                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>@(item.Product.Price * item.Quantity).ToString("C")</td>
+                    <td>
+                        <form method="post" asp-page-handler="RemoveItem">
+                            <input type="hidden" name="productId" value="@item.ProductId" />
+                            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4 class="mt-4">Total: @($"{Model.TotalAmount:c}")</h4>
+
+    <form method="post" asp-page-handler="Checkout">
+        <button type="submit" class="btn btn-success">Checkout</button>
+    </form>
+}
+else
+{
+    <p>Your cart is empty.</p>
+    <a asp-page="/Products/Index" class="btn btn-primary">Continue Shopping</a>
+}

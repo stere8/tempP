@@ -1,0 +1,80 @@
+﻿@page "{orderId:int}"
+@model OnlineShop.Pages.Orders.OrderDetailsModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details - @Model.Order.OrderId</h2>
+
+<div>
+    <strong>Order Date:</strong> @Model.Order.OrderDate.ToString("dd/MM/yyyy")<br />
+    <strong>Total Amount:</strong> @Model.Order.TotalAmount.ToString()<br />
+    <strong>Status:</strong> @Model.Order.Status<br />
+    <strong>User:</strong> @Model.Order.User?.UserName  <!-- Show the username -->
+</div>
+
+<h3>Order Items</h3>
+<table class="table">
+    @if (Model.editable)
+    {
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Order.OrderItems)
+            {
+                <tr>
+                    <td>
+                        <a asp-page="/Products/View" asp-route-id="@item.ProductId">@item.Product.Name</a> <!-- Make product name clickable -->
+                    </td>
+                    <td>@item.Quantity</td>
+                    <td>@($"{item.Price:C}")</td>
+                    <td>@($"{(item.Quantity * item.Price):C}")</td>
+                </tr>
+            }
+        </tbody>
+    }
+    else
+    {
+        <h1>Order details unavailable please check recieved email or contact the admin</h1>
+    }
+
+</table>
+
+<!-- Action Buttons -->
+@if (Model.editable)
+{
+
+    @if (User.IsInRole("Admin"))
+    {
+        <form method="post" asp-page-handler="CancelOrder" style="display:inline;">
+            <button type="submit" class="btn btn-danger">Cancel Order</button>
+        </form>
+        <form method="post" asp-page-handler="AcceptOrder" style="display:inline;">
+            <button type="submit" class="btn btn-success">Accept Order</button>
+        </form>
+        <form method="post" asp-page-handler="SetOrderToPending" style="display:inline;">
+            <button type="submit" class="btn btn-warning">Set to Pending</button>
+        </form>
+    }
+    else if (Model.Order.Status == "Pending")
+    {
+        <form method="post" asp-page-handler="CancelOrder" style="display:inline;">
+            <button type="submit" class="btn btn-danger">Cancel Order</button>
+        </form>
+    }
+}
+else
+{
+    <form method="post" asp-page-handler="CancelOrder" style="display:inline;">
+        <button type="submit" class="btn btn-danger">Cancel Order</button>
+    </form>
+}
+
+<a asp-page="/Orders/OrderList" class="btn btn-secondary">Back to Orders</a>

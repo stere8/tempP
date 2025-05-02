@@ -1,0 +1,9 @@
+﻿@page
+@model CheckoutModel
+@{
+    ViewData["Title"] = "Payment Failed";
+}
+
+<h2>Payment Failed</h2>
+<p style="color: red;">@TempData["ErrorMessage"]</p>
+<a href="/Checkout">Try Again</a>

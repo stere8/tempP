@@ -1,0 +1,51 @@
+﻿@page
+@model OnlineShop.Pages.Account.ProfileModel
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<h2>My Profile</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form method="post" class="mb-4">
+    <div class="form-group">
+        <label asp-for="UserProfile.FirstName"></label>
+        <input asp-for="UserProfile.FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserProfile.LastName"></label>
+        <input asp-for="UserProfile.LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserProfile.Address"></label>
+        <input asp-for="UserProfile.Address" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<h3>Order History</h3>
+@if (Model.Orders != null && Model.Orders.Any())
+{
+    <ul class="list-group">
+        @foreach (var order in Model.Orders)
+        {
+            <li class="list-group-item">
+                <strong>Order #@order.OrderId</strong> — @order.OrderDate.ToShortDateString() — $@order.TotalAmount
+                <ul>
+                    @foreach (var item in order.OrderItems)
+                    {
+                        <li>@item.Product.Name × @item.Quantity</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>You haven't placed any orders yet.</p>
+}

@@ -1,0 +1,82 @@
+﻿@page
+@model OnlineShop.Pages.Products.WishlistModel
+
+<h2>@(Model.IsAdmin ? "All Users' Wishlists" : "Your Wishlist")</h2>
+
+@if (Model.IsAdmin)
+{
+    <!-- Admin View: Show all wishlists -->
+    @foreach (var item in Model.AdminWishlists.OrderBy(w => w.User.UserName))
+    {
+        <div>
+            <h5>Owner: @item.User.FirstName @item.User.LastName</h5> <!-- Show the userId of the wishlist owner -->
+            <p>Products:</p>
+            <ul>
+                @foreach (var product in item.WishlistItems)
+                {
+                    <li>@product.Product.Name</li>
+                    <form method="post" asp-page-handler="RemoveFromWishlist">
+                        <input type="hidden" name="wishlistItemId" value="@product.WishlistItemId" />
+                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                    </form>
+                }
+            </ul>
+           
+        </div>
+    }
+}
+else
+{
+    <!-- Normal User View: Show their own wishlist -->
+    @if (Model.WishlistItems.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.WishlistItems)
+                {
+                    <tr>
+                        <td>@item.Product.Name</td>
+                        <td>
+                            <form method="post" asp-page-handler="RemoveFromWishlist">
+                                <input type="hidden" name="wishlistItemId" value="@item.WishlistItemId" />
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Your wishlist is empty.</p>
+    }
+}
+
+<h3>Most Wishlisted Products</h3>
+@if (Model.TopWishlistedProducts.Any())
+{
+    <ul class="list-group mb-4">
+        @foreach (var item in Model.TopWishlistedProducts)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                @item.Product.Name
+                <span class="badge bg-success rounded-pill">@item.Count times</span>
+            </li>
+            <form method="post" asp-page-handler="AddToWishlist">
+                <input type="hidden" name="productId" value="@item.Product.ProductId" />
+                <button type="submit" class="btn btn-primary btn-sm">Add to Wishlist</button>
+            </form>
+        }
+    </ul>
+}
+else
+{
+    <p>No wishlist data found.</p>
+}
