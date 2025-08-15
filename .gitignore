@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+appsettings.*.local.json
+appsettings.Development.json
+Properties/launchSettings.json
