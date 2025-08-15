@@ -35,9 +35,14 @@ public sealed class OrderRepository : IOrderRepository
     public async Task<IList<RepositoryOrder>> GetOrdersAsync(int skip, int count)
     {
         if (skip < 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(skip));
+        }
+
         if (count < 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(count));
+        }
 
         var entityOrders = await _context.Orders
             .Include(o => o.Customer)
@@ -101,17 +106,91 @@ public sealed class OrderRepository : IOrderRepository
     // Helper methods for mapping between entity and repository models
     private RepositoryOrder MapEntityToRepository(Entities.Order entityOrder)
     {
-        // Implementation to convert Entity Order to Repository Order
-        // This involves mapping all properties and related objects
+        return new RepositoryOrder(entityOrder.OrderId)
+        {
+            CustomerId = entityOrder.CustomerId,
+            EmployeeId = entityOrder.EmployeeId,
+            OrderDate = entityOrder.OrderDate,
+            RequiredDate = entityOrder.RequiredDate,
+            ShippedDate = entityOrder.ShippedDate,
+            ShipperId = entityOrder.ShipperId,
+            Freight = entityOrder.Freight,
+            ShippingAddress = new ShippingAddress
+            {
+                ShipName = entityOrder.ShipName,
+                ShipAddress = entityOrder.ShipAddress,
+                ShipCity = entityOrder.ShipCity,
+                ShipRegion = entityOrder.ShipRegion,
+                ShipPostalCode = entityOrder.ShipPostalCode,
+                ShipCountry = entityOrder.ShipCountry
+            },
+            OrderDetails = entityOrder.OrderDetails.Select(od => new RepositoryOrderDetail
+            {
+                ProductId = od.ProductId,
+                UnitPrice = od.UnitPrice,
+                Quantity = od.Quantity,
+                Discount = od.Discount
+            }).ToList()
+        };
     }
 
     private Entities.Order MapRepositoryToEntity(RepositoryOrder repositoryOrder)
     {
-        // Implementation to convert Repository Order to Entity Order
+        return new Entities.Order
+        {
+            OrderId = repositoryOrder.Id,
+            CustomerId = repositoryOrder.CustomerId,
+            EmployeeId = repositoryOrder.EmployeeId,
+            OrderDate = repositoryOrder.OrderDate,
+            RequiredDate = repositoryOrder.RequiredDate,
+            ShippedDate = repositoryOrder.ShippedDate,
+            ShipperId = repositoryOrder.ShipperId,
+            Freight = repositoryOrder.Freight,
+            ShipName = repositoryOrder.ShippingAddress?.ShipName ?? string.Empty,
+            ShipAddress = repositoryOrder.ShippingAddress?.ShipAddress ?? string.Empty,
+            ShipCity = repositoryOrder.ShippingAddress?.ShipCity ?? string.Empty,
+            ShipRegion = repositoryOrder.ShippingAddress?.ShipRegion,
+            ShipPostalCode = repositoryOrder.ShippingAddress?.ShipPostalCode ?? string.Empty,
+            ShipCountry = repositoryOrder.ShippingAddress?.ShipCountry ?? string.Empty,
+            OrderDetails = repositoryOrder.OrderDetails.Select(od => new Entities.OrderDetail
+            {
+                OrderId = repositoryOrder.Id,
+                ProductId = od.ProductId,
+                UnitPrice = od.UnitPrice,
+                Quantity = od.Quantity,
+                Discount = od.Discount
+            }).ToList()
+        };
     }
 
     private void UpdateEntityFromRepository(Entities.Order entityOrder, RepositoryOrder repositoryOrder)
     {
-        // Implementation to update entity properties from repository model
+        entityOrder.CustomerId = repositoryOrder.CustomerId;
+        entityOrder.EmployeeId = repositoryOrder.EmployeeId;
+        entityOrder.OrderDate = repositoryOrder.OrderDate;
+        entityOrder.RequiredDate = repositoryOrder.RequiredDate;
+        entityOrder.ShippedDate = repositoryOrder.ShippedDate;
+        entityOrder.ShipperId = repositoryOrder.ShipperId;
+        entityOrder.Freight = repositoryOrder.Freight;
+        entityOrder.ShipName = repositoryOrder.ShippingAddress?.ShipName ?? string.Empty;
+        entityOrder.ShipAddress = repositoryOrder.ShippingAddress?.ShipAddress ?? string.Empty;
+        entityOrder.ShipCity = repositoryOrder.ShippingAddress?.ShipCity ?? string.Empty;
+        entityOrder.ShipRegion = repositoryOrder.ShippingAddress?.ShipRegion;
+        entityOrder.ShipPostalCode = repositoryOrder.ShippingAddress?.ShipPostalCode ?? string.Empty;
+        entityOrder.ShipCountry = repositoryOrder.ShippingAddress?.ShipCountry ?? string.Empty;
+
+        // Update order details
+        entityOrder.OrderDetails.Clear();
+        foreach (var detail in repositoryOrder.OrderDetails)
+        {
+            entityOrder.OrderDetails.Add(new Entities.OrderDetail
+            {
+                OrderId = repositoryOrder.Id,
+                ProductId = detail.ProductId,
+                UnitPrice = detail.UnitPrice,
+                Quantity = detail.Quantity,
+                Discount = detail.Discount
+            });
+        }
     }
 }

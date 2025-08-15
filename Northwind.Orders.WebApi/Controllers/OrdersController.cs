@@ -73,7 +73,7 @@ public sealed class OrdersController : ControllerBase
             _logger.LogInformation("Adding new order");
             var repositoryOrder = MapFromBriefOrder(order);
             var orderId = await _orderRepository.AddOrderAsync(repositoryOrder);
-            var result = new ModelsAddOrder { Id = orderId };
+            var result = new ModelsAddOrder { OrderId = orderId }; // or whatever the property is called
             return Ok(result);
         }
         catch (RepositoryException ex)
@@ -136,15 +136,84 @@ public sealed class OrdersController : ControllerBase
     }
 
     // Helper methods for mapping between API models and repository models
-    private ModelsFullOrder MapToFullOrder(Northwind.Services.Repositories.Order order)
+
+    Copy code
+private ModelsFullOrder MapToFullOrder(RepositoryOrder order)
     {
-        // Implementation
+        return new ModelsFullOrder
+        {
+            Id = order.Id,
+            CustomerId = order.CustomerId,
+            EmployeeId = order.EmployeeId,
+            OrderDate = order.OrderDate,
+            RequiredDate = order.RequiredDate,
+            ShippedDate = order.ShippedDate,
+            Freight = order.Freight,
+            Customer = new ModelsCustomer
+            {
+                Id = order.Customer?.Id ?? string.Empty,
+                CompanyName = order.Customer?.CompanyName ?? string.Empty
+            },
+            Employee = new ModelsEmployee
+            {
+                Id = order.Employee?.Id ?? 0,
+                FirstName = order.Employee?.FirstName ?? string.Empty,
+                LastName = order.Employee?.LastName ?? string.Empty
+            },
+            Shipper = new ModelsShipper
+            {
+                Id = order.Shipper?.Id ?? 0,
+                CompanyName = order.Shipper?.CompanyName ?? string.Empty
+            },
+            ShippingAddress = new ModelsShippingAddress
+            {
+                ShipName = order.ShippingAddress?.ShipName ?? string.Empty,
+                ShipAddress = order.ShippingAddress?.ShipAddress ?? string.Empty,
+                ShipCity = order.ShippingAddress?.ShipCity ?? string.Empty,
+                ShipRegion = order.ShippingAddress?.ShipRegion,
+                ShipPostalCode = order.ShippingAddress?.ShipPostalCode ?? string.Empty,
+                ShipCountry = order.ShippingAddress?.ShipCountry ?? string.Empty
+            },
+            OrderDetails = order.OrderDetails.Select(od => new ModelsFullOrderDetail
+            {
+                ProductId = od.ProductId,
+                UnitPrice = od.UnitPrice,
+                Quantity = od.Quantity,
+                Discount = od.Discount
+            }).ToList()
+        };
     }
 
-    private ModelsBriefOrder MapToBriefOrder(Northwind.Services.Repositories.Order order)
+    private RepositoryOrder MapFromBriefOrder(ModelsBriefOrder briefOrder)
     {
-        // Implementation
+        return new RepositoryOrder(briefOrder.Id)
+        {
+            CustomerId = briefOrder.CustomerId,
+            EmployeeId = briefOrder.EmployeeId,
+            OrderDate = briefOrder.OrderDate,
+            RequiredDate = briefOrder.RequiredDate,
+            ShippedDate = briefOrder.ShippedDate,
+            ShipperId = briefOrder.ShippingAddress != null ? 1 : 1, // You'll need to determine the shipper ID logic
+            Freight = briefOrder.Freight,
+            ShippingAddress = briefOrder.ShippingAddress != null ? new ShippingAddress
+            {
+                ShipName = briefOrder.ShippingAddress.ShipName,
+                ShipAddress = briefOrder.ShippingAddress.ShipAddress,
+                ShipCity = briefOrder.ShippingAddress.ShipCity,
+                ShipRegion = briefOrder.ShippingAddress.ShipRegion,
+                ShipPostalCode = briefOrder.ShippingAddress.ShipPostalCode,
+                ShipCountry = briefOrder.ShippingAddress.ShipCountry
+            } : new ShippingAddress(),
+            OrderDetails = briefOrder.OrderDetails?.Select(od => new RepositoryOrderDetail
+            {
+                ProductId = od.ProductId,
+                UnitPrice = od.UnitPrice,
+                Quantity = od.Quantity,
+                Discount = od.Discount
+            }).ToList() ?? new List<RepositoryOrderDetail>()
+        };
     }
+
 
     private Northwind.Services.Repositories.Order MapFromBriefOrder(ModelsBriefOrder briefOrder)
     {
